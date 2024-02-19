@@ -7,8 +7,9 @@
 function countVowels(str) {
   let count=0;
   let vowels = "aeiou";
+  let nstr=str.toLowerCase();
   for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i].toLowerCase())) {
+    if (vowels.includes(nstr[i])) {
       count++;
     }
   }

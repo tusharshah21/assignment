@@ -58,6 +58,6 @@ class Calculator {
 
 const calculator = new Calculator();
 calculator.calculate("10/0");
-console.log(calculator.getResult()); // Output should be 24
+console.log(calculator.getResult());
 
 module.exports = Calculator;
