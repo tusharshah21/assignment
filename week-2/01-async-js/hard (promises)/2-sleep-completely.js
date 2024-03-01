@@ -5,6 +5,12 @@
  */
 
 function sleep(milliseconds) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, milliseconds);
+      });
 }
+
+const ans=sleep(4000);
+console.log(ans);
 
 module.exports = sleep;
