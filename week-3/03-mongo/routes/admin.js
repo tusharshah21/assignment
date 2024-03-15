@@ -11,6 +11,22 @@ router.post('/signup', (req, res) => {
 
 router.post('/courses', adminMiddleware, (req, res) => {
     // Implement course creation logic
+    // Implement course creation logic
+    const title = req.body.title;
+    const description = req.body.description;
+    const imageLink = req.body.imageLink;
+    const price = req.body.price;
+    // zod
+    const newCourse = await Course.create({
+        title,
+        description,
+        imageLink,
+        price
+    })
+
+    res.json({
+        message: 'Course created successfully', courseId: newCourse._id
+    })
 });
 
 router.get('/courses', adminMiddleware, (req, res) => {
