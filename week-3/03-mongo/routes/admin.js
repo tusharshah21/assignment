@@ -3,10 +3,18 @@ const adminMiddleware = require("../middleware/admin");
 const router = Router();
 
 // Admin Routes
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     // Implement admin signup logic
+    await Admin.create({
+        username: username,
+        password: password
+    })
+
+    res.json({
+        message: 'Admin created successfully'
+    })
 });
 
 router.post('/courses', adminMiddleware, (req, res) => {
@@ -27,10 +35,6 @@ router.post('/courses', adminMiddleware, (req, res) => {
     res.json({
         message: 'Course created successfully', courseId: newCourse._id
     })
-});
-
-router.get('/courses', adminMiddleware, (req, res) => {
-    // Implement fetching all courses logic
 });
 
 module.exports = router;
