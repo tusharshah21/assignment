@@ -7,14 +7,14 @@ mongoose.connect('mongodb://localhost:27017/course_selling_app');
 // Define schemas
 const AdminSchema = new mongoose.Schema({
     // Schema definition here
-    usernames:String,
+    username:String,
     password:String
 
 });
 
 const UserSchema = new mongoose.Schema({
     // Schema definition here
-    usernames: String,
+    username: String,
     password: String,
     purchasedCourses: [{
         type: mongoose.Schema.Types.ObjectId,

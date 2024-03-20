@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const adminMiddleware = require("../middleware/admin");
 const router = Router();
+const { Admin, Course } = require("../db");
+
 
 // Admin Routes
 router.post('/signup', async (req, res) => {
@@ -40,9 +42,9 @@ router.post('/courses', adminMiddleware, async (req, res) => {
 router.get('/courses', adminMiddleware, async (req, res) => {
     // Implement fetching all courses logic
     const response = await Course.find({});
-
     res.json({
         courses: response
+        // msg: "hi there!"
     })
 
 }); 
