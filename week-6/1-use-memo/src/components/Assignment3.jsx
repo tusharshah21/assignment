@@ -8,6 +8,9 @@ export const Assignment3 = () => {
         { name: 'Chips', value: 20 },
         { name: 'Onion', value: 30 },
         { name: 'Tomato', value: 30 },
+        { name: 'Chipotle', value: 50 },
+        { name: 'Soft Drink', value: 40 },
+
         // Add more items as needed
     ]);
 
